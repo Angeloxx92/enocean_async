@@ -24,7 +24,7 @@ setup(
     },
     install_requires=[
         'enum-compat>=0.0.2',
-        'pyserial-async>=0.4',
+        'pyserial-asyncio>=0.4',
         'beautifulsoup4>=4.3.2',
         'aioconsole>0.1.15',
     ])

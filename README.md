@@ -45,3 +45,32 @@ after that you're device will be always `/dev/anocean`
 
 ***THIS PYTHON MODULE ASSUMES THAT YOU'VE ALREADY DONE THAT***
 
+# Requirements
+*  python>=3.7
+
+# Installation
+
+Option 1: Using pip
+===================
+
+enocean_async is available on [PyPI](https://pypi.org/project/enocean-async/) and can be
+installed using ``pip``:
+
+
+    # Install system-wide
+    $ sudo pip3 install enocean-async
+
+    # ... or user-wide installation
+    $ pip3 install --user enocean-async
+
+
+Option 2: From source
+=====================
+
+    $ git clone https://github.com/Angeloxx92/enocean_async.git
+    $ cd enocean_async
+    $ python3 setup.py install
+
+
+# Simple Usage
+[Examples](https://github.com/Angeloxx92/enocean_async/tree/master/examples)

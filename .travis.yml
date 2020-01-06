@@ -1,0 +1,19 @@
+language: python
+dist: xenial
+python:
+  - "3.7"
+  - "3.8"
+install:
+  - pip install pylint coverage coveralls
+  - pip install -e .
+script:
+  - nosetests -s -q --with-coverage --cover-package=enocean_async
+sudo: false
+matrix:
+  fast_finish: true
+  allow_failures:
+    - python: nightly
+
+after_success:
+  - pylint enocean_async -d line-too-long
+  - coveralls

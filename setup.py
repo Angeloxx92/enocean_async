@@ -26,5 +26,5 @@ setup(
         'enum-compat>=0.0.2',
         'pyserial-asyncio>=0.4',
         'beautifulsoup4>=4.3.2',
-        'aioconsole>0.1.15',
+        'aioconsole>=0.1.15',
     ])

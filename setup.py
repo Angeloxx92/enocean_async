@@ -30,6 +30,6 @@ setup(
         'pyserial-asyncio>=0.4',
         'beautifulsoup4>=4.3.2',
         'aioconsole>=0.1.15',
-    ]
+    ],
     python_requires='>=3.7',
     )

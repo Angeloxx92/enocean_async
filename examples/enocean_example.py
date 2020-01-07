@@ -20,11 +20,17 @@ import serial_asyncio
 from enocean_async import utils
 
 """
-'/dev/ttyUSB0' might change depending on where your device is.
-To prevent running the app as root, change the access permissions:
-'sudo chmod 777 /dev/ttyUSB0'
+'Remember to make the udev rule and after that change the access permissions:
+'sudo chmod 777 /dev/enocean'
 """
+
+
+
+
+
 class USB300DB(SerialCommunicator):
+    '''Subclass the SerialCommunicator and override the async method of async packet to change
+    the behaviour of every RadioPacket recived'''
     async def packet(self, packet):
         if packet.rorg == RORG.VLD:
             packet.select_eep(0x05, 0x00)

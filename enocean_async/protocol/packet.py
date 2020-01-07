@@ -17,7 +17,7 @@ class Packet(object):
     parse_msg() returns subclass, if one is defined for the data type.
     '''
     eep = EEP()
-    logger = logging.getLogger('enocean.protocol.packet')
+    logger = logging.getLogger('enocean_async.protocol.packet')
 
     def __init__(self, packet_type, data=None, optional=None):
         self.packet_type = packet_type
@@ -73,15 +73,15 @@ class Packet(object):
     # # Thus, this is also untested.
     # @property
     # def _bit_optional(self):
-    #     return enocean.utils.to_bitarray(self.optional, 8 * len(self.optional))
+    #     return enocean_async.utils.to_bitarray(self.optional, 8 * len(self.optional))
 
     # @_bit_optional.setter
     # def _bit_optional(self, value):
     #     if self.rorg in [RORG.RPS, RORG.BS1]:
-    #         self.data[1] = enocean.utils.from_bitarray(value)
+    #         self.data[1] = enocean_async.utils.from_bitarray(value)
     #     if self.rorg == RORG.BS4:
     #         for byte in range(4):
-    #             self.data[byte+1] = enocean.utils.from_bitarray(value[byte*8:(byte+1)*8])
+    #             self.data[byte+1] = enocean_async.utils.from_bitarray(value[byte*8:(byte+1)*8])
 
     @property
     def _bit_status(self):

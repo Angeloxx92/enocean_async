@@ -4,9 +4,12 @@ try:
 except ImportError:
     from distutils.core import setup
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setup(
     name='enocean_async',
-    version='1.0.0',
+    version='1.0.1',
     description='EnOcean serial protocol async implementation',
     author='Angelo Cutaia',
     author_email='angeloxx92@hotmail.it',
@@ -27,4 +30,6 @@ setup(
         'pyserial-asyncio>=0.4',
         'beautifulsoup4>=4.3.2',
         'aioconsole>=0.1.15',
-    ])
+    ]
+    python_requires='>=3.7',
+    )

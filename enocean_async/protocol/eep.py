@@ -11,7 +11,7 @@ from enocean_async.protocol.constants import RORG
 
 
 class EEP(object):
-    logger = logging.getLogger('enocean.protocol.eep')
+    logger = logging.getLogger('enocean_async.protocol.eep')
 
     def __init__(self):
         self.init_ok = False
@@ -35,9 +35,9 @@ class EEP(object):
 
     def __load_xml(self):
         self.telegrams = {
-            enocean.utils.from_hex_string(telegram['rorg']): {
-                enocean.utils.from_hex_string(function['func']): {
-                    enocean.utils.from_hex_string(type['type'], ): type
+            enocean_async.utils.from_hex_string(telegram['rorg']): {
+                enocean_async.utils.from_hex_string(function['func']): {
+                    enocean_async.utils.from_hex_string(type['type'], ): type
                     for type in function.find_all('profile')
                 }
                 for function in telegram.find_all('profiles')

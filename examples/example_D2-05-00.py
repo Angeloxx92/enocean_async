@@ -19,10 +19,21 @@ def set_position(destination, percentage, base_id):
 
 devices_learned = []
 
+
+
+"""
+'Remember to make the udev rule and after that change the access permissions:
+'sudo chmod 777 /dev/enocean'
+"""
+
 class USB330DB(SerialCommunicator):
+     '''Subclass the SerialCommunicator and override the async method of async packet to change
+    the behaviour of every RadioPacket recived\n
+    override async def teachin_packet to change the behaviour of every UTEachInPacket'''
     async def packet(self, packet):
         print(packet)
         return
+
     async def teachin_packet(self, packet):
         print('New device learned! The ID is %s.' % (packet.sender_hex))
         devices_learned.append(packet.sender)

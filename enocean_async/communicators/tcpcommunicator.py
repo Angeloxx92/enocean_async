@@ -9,7 +9,7 @@ from functools import partial
 from aioconsole import ainput
 
 class TCPCommunicator():
-    logger = logging.getLogger('enocean.communicators.TCPCommunicator')
+    logger = logging.getLogger('enocean_async.communicators.TCPCommunicator')
     def __init__(self, host='', port=9637):
         self.host = host
         self.port = port

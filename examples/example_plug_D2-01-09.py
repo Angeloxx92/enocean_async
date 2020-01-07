@@ -8,8 +8,14 @@ from enocean_async.communicators.serialcommunicator import SerialCommunicator
 from enocean_async.protocol.packet import RadioPacket, UTETeachInPacket
 from enocean_async.protocol.constants import RORG
 
+"""
+'Remember to make the udev rule and after that change the access permissions:
+'sudo chmod 777 /dev/enocean'
+"""
 
 class USB330DB(SerialCommunicator):
+      '''Subclass the SerialCommunicator and override the async method of async packet to change
+    the behaviour of every RadioPacket recived'''
     async def packet(self, packet):
         if packet.rorg == RORG.VLD:
            # in this way i'll parse the correct command of the radio packet sent by the plug

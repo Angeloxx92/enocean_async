@@ -3,6 +3,8 @@
 from enocean_async.consolelogger import init_logging
 from enocean_async.communicators.serialcommunicator import SerialCommunicator
 
+'''In this example the USB300DB will send every packet recived to a TCP server that is running on the localhost and has port 9637
+open . Look the example tcp_server'''
 
 class USB300DB(SerialCommunicator):
     async def packet(self, packet):

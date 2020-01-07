@@ -14,9 +14,17 @@ from enocean_async.communicators.serialcommunicator import SerialCommunicator
 from enocean_async.protocol.packet import RadioPacket, UTETeachInPacket
 from enocean_async.protocol.constants import RORG
 
+"""
+'Remember to make the udev rule and after that change the access permissions:
+'sudo chmod 777 /dev/enocean'
+"""
+
 devices_learned = []
 
 class USB330DB(SerialCommunicator):
+    '''Subclass the SerialCommunicator and override the async method of async packet to change
+    the behaviour of every RadioPacket recived\n
+    override async def teachin_packet to change the behaviour of every UTEachInPacket'''
     async def packet(self, packet):
         print(packet)
         return
@@ -24,7 +32,8 @@ class USB330DB(SerialCommunicator):
         print('New device learned! The ID is %s.' % (packet.sender_hex))
         devices_learned.append(packet.sender)
         return
-
+        
+#### Method to controll the switches ####
     def send_command(self, destination, output_value):
         self.send(RadioPacket.create(rorg=RORG.VLD, rorg_func=0x01, rorg_type=0x01,
          destination=destination, sender=self.base_id, command=1, IO=0x1E, OV=output_value))

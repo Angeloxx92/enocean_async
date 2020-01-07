@@ -22,8 +22,8 @@ class Server(TCPCommunicator):
 
 def main():
     init_logging()
-    communicator = Server()
-    communicator.start()
+    server = Server()
+    server.start()
 
 
 if __name__== "__main__":

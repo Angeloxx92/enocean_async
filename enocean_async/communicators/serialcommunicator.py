@@ -11,7 +11,7 @@ from functools import partial
 
 
 class SerialCommunicator():
-    logger = logging.getLogger('enocean.communicators.SerialCommunicator')
+    logger = logging.getLogger('enocean_async.communicators.SerialCommunicator')
     def __init__(self):
         self.baudrate = 57600
         self.port = '/dev/enocean'

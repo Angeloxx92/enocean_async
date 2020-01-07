@@ -2,7 +2,7 @@
 A Python library for reading and controlling asynchronously [EnOcean](http://www.enocean.com/) devices.
 This library was inspired by [Python EnOcean](https://github.com/kipe/enocean).
 
-I It has been tested on the [SB-300 EnOcean](https://www.enocean.com/en/products/enocean_modules/usb-300-oem/).
+I It has been tested on the [USB-300 EnOcean](https://www.enocean.com/en/products/enocean_modules/usb-300-oem/).
 This Python module receives messages from an EnOcean interface (e.g. via USB) that runs in an asynchronous Thread and can publish those packets to an asynchronous TCP server.By default it answer to UTETeachInPacket
 
 You may also configure the action done by the EnOcean interface and by the TCP server everytime you recive a RadioPacket. You are not obliged to use the TCP server.

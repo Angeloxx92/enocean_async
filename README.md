@@ -75,4 +75,5 @@ Option 2: From source
 # Simple Usage
 To use the serial Gateway just Subclass `SerialCommunicator` and override the methods `SerialCommunicator.packet()` and `SerialCommunicator.teachin_packet` and define new methods (using `SerialCommunicator.send(packet)`) to controll the enocean actuators  Plug, a switch and so on.
 In order to use the TCP server Subclass `TCPCommunicator` and override the method `TCP.packet()`.
-Run some [Examples](https://github.com/Angeloxx92/enocean_async/tree/master/examples) to have all clearer
+
+[Examples](https://github.com/Angeloxx92/enocean_async/tree/master/examples) 
